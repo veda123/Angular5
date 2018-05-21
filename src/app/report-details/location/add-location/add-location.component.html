@@ -1,0 +1,59 @@
+<div class="container-fluid"> 
+    <div class="row h-100 justify-content-center align-items-center"> 
+<form class="col-lg-6" [formGroup]="locationForm" (ngSubmit)="processLocation(locationForm.value)" novalidate>
+  <div class="form-group required">
+    <label class="control-label" for="name">Location Name</label>
+      <input  formControlName="locationName" id="name" type="text"  class="form-control" placeholder="Location Name" 
+      [ngClass]="{'has-error': locationName.touched && locationName.invalid }">
+      <div *ngIf="locationName.touched && locationName.invalid" class="display-error">
+          <div *ngIf="locationName.errors.required">Location Name is required</div>
+          <div *ngIf="locationName.errors.pattern">Location Name is invalid</div>
+      </div>
+  </div>
+  <div class="form-group required" >
+      <label class="control-label" for="address">Address</label>
+        <textarea formControlName="address" class="form-control" id="address" rows = "6" placeholder="Location Address"
+        [ngClass]="{'has-error': address.touched && address.invalid }"></textarea>
+        <div *ngIf="address.touched && address.invalid" class="display-error">Address is required</div>     
+  </div>
+  <div class="form-group required" >
+        <label class="control-label" for="city">City</label>
+        <input formControlName="city" id="city" type="text" class="form-control" placeholder="City"
+        [ngClass]="{'has-error': city.touched && city.invalid}">
+        <div *ngIf="city.touched && city.invalid" class="display-error">City is required</div> 
+  </div>
+  <div class="form-group required" >
+          <label class="control-label" for="country">Country</label>
+          <input formControlName="country" id="country" type="text"  class="form-control" placeholder="Country"
+          [ngClass]="{'has-error': country.touched && country.invalid}">
+          <div *ngIf="country.touched && country.invalid" class="display-error">Country is required</div>
+  </div>
+  <div class="form-group required" >
+      <label class="control-label" for="zipcode">ZipCode</label>
+      <input formControlName="zipcode" id="zipcode" type="text" class="form-control" placeholder="Zipcode"
+      [ngClass]="{'has-error': zipcode.touched && zipcode.invalid}">
+      <div *ngIf="zipcode.touched && zipcode.invalid" class="display-error">ZipCode is required</div>
+  </div>
+  <div class="form-group" >
+      <label for="phone">Phone</label>
+      <input formControlName="phone" id="phone" type="text" class="form-control" placeholder="Phone">
+        <!-- <div *ngIf="phone.touched && phone.invalid" class="display-error">
+            <div *ngIf="phone.errors.pattern">Phone Number is invalid</div>
+    </div> -->
+  </div>
+  <div class="form-group required" >
+      <label class="control-label" for="timezone">TimeZone</label>
+      <input formControlName="timezone" id="timezone" type="text" class="form-control" placeholder="TimeZone"
+      [ngClass]="{'has-error': timezone.touched && timezone.invalid}">
+      <div *ngIf="timezone.touched && timezone.invalid" class="display-error">
+        <div *ngIf="timezone.errors.required">TimeZone is required</div>
+        <div *ngIf="timezone.errors.pattern">TimeZone is invalid</div>
+    </div>
+  </div>
+  <!-- <div *ngIf="locationForm.errors" class="alert alert-danger">Please Check for invalid entries </div> -->
+  <div class="form-group">
+      <button class="btn btn-info btn-md btn-block" type="submit" [disabled]="!locationForm.valid">Save</button>
+  </div>
+</form>
+</div>
+</div>

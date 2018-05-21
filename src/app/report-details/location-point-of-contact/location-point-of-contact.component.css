@@ -1,0 +1,30 @@
+.Tab {
+    /* width: 84px;
+    height: 13px; */
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align:center;
+    background-color: #5dbfd4;
+    border: solid 1px #5dbfd4;
+    color: #ffffff;
+}  
+
+table{
+    margin: 0 auto
+ }
+
+/* .center
+{ 
+text-align: center;
+}
+
+.center-table
+{ 
+    margin-top:200px;
+    margin-left:200px;
+} */

@@ -1,0 +1,23 @@
+<div class= "overlay">
+    <div class="container h-100">
+        <div class="row h-25 justify-content-center align-items-center"> 
+            <div class="title">{{title}}</div>
+        </div>
+        <div class="row h-25 justify-content-center align-items-center"> 
+                <form class="col-sm-6" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+                    <div class="form-group" [ngClass]="{ 'has-error': username.touched && username.invalid }">
+                        <input  formControlName="username" id="username" type="text"  class="form-control Username" placeholder="Username">
+                        <div *ngIf="username.touched && username.invalid" class="display-error">Username is required</div>
+                    </div>
+                    <div class="form-group">
+                        <input formControlName="password" id="password" type="password" class="form-control Username" placeholder="Password">
+                        <div *ngIf="password.touched && password.invalid" class="display-error" >Password is required</div>
+                    </div>
+                    <div *ngIf="loginForm.errors" class="alert alert-danger Username">Username or Password is incorrect </div>
+                    <div class="form-group">
+                        <button class="btn btn-info btn-md btn-block" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
